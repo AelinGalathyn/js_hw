@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html>
+    <head></head>
+    <body>
+        <p id="text"></p>
+        <input type="text" id="input">
+
+        <script>
+            const text = document.querySelector('#text');
+            const input = document.querySelector('#input');
+
+            input.addEventListener('input', function() {
+                text.innerHTML = input.value;
+            });
+        </script>
+    </body>
+</html>

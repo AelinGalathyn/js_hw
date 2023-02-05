@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+    <head></head>
+    <body>
+        <input type="text" id="input1">
+        <input type="text" id="input2">
+        <input type="text" id="input3">
+
+        <script>
+        const inputs = document.querySelectorAll('input');
+
+        inputs.forEach(input => {
+            input.addEventListener('focus', function() {
+                inputs.forEach(i => {
+                    i.style.color = 'black';
+                });
+                this.style.color = 'green';
+            });
+        });
+        </script>
+    </body>
+</html>
