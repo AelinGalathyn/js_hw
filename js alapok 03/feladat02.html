@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Háromszög területe és kerülete</title>
+  </head>
+  <body>
+    <p>
+      Adja meg a háromszög oldalainak hosszát:
+    </p>
+    <input type="number" id="side1">
+    <input type="number" id="side2">
+    <input type="number" id="side3">
+    <button onclick="calculateTriangle()">Számítás</button>
+    <br><br>
+    <p id="result"></p>
+
+    <script>
+      function calculateTriangle() {
+        var side1 = parseFloat(document.getElementById("side1").value);
+        var side2 = parseFloat(document.getElementById("side2").value);
+        var side3 = parseFloat(document.getElementById("side3").value);
+        var perimeter = side1 + side2 + side3;
+        var s = perimeter / 2;
+        var area = Math.sqrt(s * (s - side1) * (s - side2) * (s - side3));
+        document.getElementById("result").innerHTML = "A háromszög kerülete: " + perimeter + "<br>A háromszög területe: " + area;
+      }
+    </script>
+  </body>
+</html>

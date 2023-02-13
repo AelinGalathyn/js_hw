@@ -1,13 +1,32 @@
 <!DOCTYPE html>
 <html>
-    <head>
-    </head>
-    <body>
-        <script>
-            let rn=Math.trunc(Math.random()*100)+1
-            console.log(rn)
+  <head>
+    <title>Véletlenszám-generátor</title>
+  </head>
+  <body>
+    <input type="number" id="inputNumber">
+    <button onclick="checkGuess()">Tippelés</button>
+    <button onclick="generateNumber()">Új szám</button>
 
-            
-        </script>
-    </body>
+    <script>
+      var randomNumber;
+
+      function generateNumber() {
+        randomNumber = Math.floor(Math.random() * 100) + 1;
+      }
+
+      function checkGuess() {
+        var input = document.getElementById("inputNumber").value;
+        if (input == randomNumber) {
+          alert("Gratulálok, eltaláltad a számot!");
+        } else if (input < randomNumber) {
+          alert("Sajnos, nem találtad el a számot. A gondolt szám nagyobb.");
+        } else {
+          alert("Sajnos, nem találtad el a számot. A gondolt szám kisebb.");
+        }
+      }
+      
+      generateNumber();
+    </script>
+  </body>
 </html>

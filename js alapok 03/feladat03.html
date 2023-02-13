@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+    <head>
+
+    </head>
+    <body>
+        <button onclick="koszon()">Köszöntés</button>
+
+        <script>
+            function koszon(){
+                var today = new Date();
+                var time = today.getHours();  
+                switch(true) {
+                    case time<=10:
+                        alert("Jó reggelt!");
+                        break;
+                    case time<=17:
+                        alert("Jó napot!");
+                        break;
+                    default:
+                        alert("Jó estét!");
+                        break;
+                }
+            }
+        </script>
+    </body>
+</html>
