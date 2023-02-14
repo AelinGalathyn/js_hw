@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Caps Lock</title>
+  </head>
+  <body>
+    <label for="input-text">szöveg: </label>
+    <input type="text" id="input-text">
+    <br>
+    <label for="uppercase-radio">nagybetűs</label>
+    <input type="radio" id="uppercase-radio" name="conversion-type" value="uppercase">
+    <label for="lowercase-radio">kisbetűs</label>
+    <input type="radio" id="lowercase-radio" name="conversion-type" value="lowercase">
+    <br>
+    <button onclick="convertText()">átalakítás</button>
+    <br>
+    <p id="output-text"></p>
+    <script>
+      function convertText() {
+        var input = document.getElementById("input-text").value;
+        var output;
+        var conversionType = document.querySelector('input[name="conversion-type"]:checked');
+        if (!input) {
+          alert("Nincs bemeneti szöveg!");
+          return;
+        } else if (!conversionType) {
+          alert("Válaszd ki a betűstílust!");
+          return;
+        } else if (conversionType.value === "uppercase") {
+          output = input.toUpperCase();
+        } else if (conversionType.value === "lowercase") {
+          output = input.toLowerCase();
+        }
+        document.getElementById("output-text").innerHTML = output;
+      }
+    </script>
+  </body>
+</html>
