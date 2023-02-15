@@ -21,7 +21,7 @@
         <p><label for="birthdate">Születési dátum:</label>
         <input type="date" id="birthdate" name="birthdate" required></p>
         
-        <p><button type="submit">Regisztráció</button></p>
+        <p><button>Regisztráció</button></p>
     </form>
     
     <script>
@@ -44,10 +44,15 @@
           alert('A jelszónak legalább 5 karakter hosszúnak kell lennie!');
           return;
         }
+
+        const passwordRegex = /^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[!@#$%^&*()_+\-=[\]{};':"\\|,.<>/?]).{5,}$/;
         if (passwordInput.value !== password2Input.value) {
           alert('A két jelszó nem egyezik meg!');
           return;
         }
+        if (!passwordRegex.test(passwordInput.value)) {
+          alert('A jelszónak tartalmaznia kell kisbetűt, nagybetűt, számot és speciális karaktereket!');
+          return;}
         
         const emailRegex = /^\S+@\S+\.\S+$/;
         if (!emailRegex.test(emailInput.value)) {
@@ -62,7 +67,14 @@
           return;
         }
         
-        form.submit();
+        const user = {
+          "username" : usernameInput.value,
+          "password" : passwordInput.value,
+          "email" : emailInput.value,
+          "birthdate" : birthdateInput.value
+        }
+
+        console.log(user);
       });
     </script>
   </body>
