@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Étterem elégedettségi kérdőív</title>
+  </head>
+  <body>
+    <h1>Étterem elégedettségi kérdőív</h1>
+    <form onsubmit="return validateForm()">
+      <label for="name">Név:</label>
+      <input type="text" id="name" name="name"><br><br>
+      
+      <label for="email">E-mail cím:</label>
+      <input type="email" id="email" name="email"><br><br>
+      
+      <label for="phone">Telefonszám:</label>
+      <input type="tel" id="phone" name="phone"><br><br>
+      
+      <label for="age">Életkor:</label>
+      <input type="number" id="age" name="age"><br><br>
+      
+      <label>Hány csillagot adna az éttermünknek?</label><br>
+      <table>
+        <tr>
+          <td></td>
+          <td>Nagyon rossz</td>
+          <td>Rossz</td>
+          <td>Átlagos</td>
+          <td>Jó</td>
+          <td>Nagyon jó</td>
+        </tr>
+        <tr>
+          <td>Ételek minősége:</td>
+          <td><input type="radio" name="quality" value="1"></td>
+          <td><input type="radio" name="quality" value="2"></td>
+          <td><input type="radio" name="quality" value="3"></td>
+          <td><input type="radio" name="quality" value="4"></td>
+          <td><input type="radio" name="quality" value="5"></td>
+        </tr>
+        <tr>
+          <td>Ár-érték arány:</td>
+          <td><input type="radio" name="value" value="1"></td>
+          <td><input type="radio" name="value" value="2"></td>
+          <td><input type="radio" name="value" value="3"></td>
+          <td><input type="radio" name="value" value="4"></td>
+          <td><input type="radio" name="value" value="5"></td>
+        </tr>
+        <tr>
+          <td>Kiszolgálás minősége:</td>
+          <td><input type="radio" name="service" value="1"></td>
+          <td><input type="radio" name="service" value="2"></td>
+          <td><input type="radio" name="service" value="3"></td>
+          <td><input type="radio" name="service" value="4"></td>
+          <td><input type="radio" name="service" value="5"></td>
+        </tr>
+        <tr>
+          <td>Atmoszféra:</td>
+          <td><input type="radio" name="atmosphere" value="1"></td>
+          <td><input type="radio" name="atmosphere" value="2"></td>
+          <td><input type="radio" name="atmosphere" value="3"></td>
+          <td><input type="radio" name="atmosphere" value="4"></td>
+          <td><input type="radio" name="atmosphere" value="5"></td>
+        </tr>
+      </table><br><br>
+      
+      <label for="comment">Megjegyzés:</label><br>
+      <textarea id="comment" name="comment" rows="4" cols="50"></textarea><br><br>
+      
+      <input type="submit" value="Küldés">
+    </form>
+
+    <script>
+      function validateForm() {
+        var name = document.forms[0]["name"].value;
+        var email = document.forms[0]["email"].value;
+        var phone = document.forms[0]["phone"].value;
+        var age = document.forms[0]["age"].value;
+        var quality = document.forms[0]["quality"].value;
+        var value = document.forms[0]["value"].value;
+        var service = document.forms[0]["service"].value;
+        var atmosphere = document.forms[0]["atmosphere"].value;
+
+        if (name == "" || email == "" || phone == "" || age == "" || quality == "" || value == "" || service == "" || atmosphere == "") {
+          alert("Minden mezőt ki kell tölteni!");
+          return false;
+        }
+      }
+    </script>
+  </body>
+</html>
+
