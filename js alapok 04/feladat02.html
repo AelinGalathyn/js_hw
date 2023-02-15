@@ -21,10 +21,11 @@
         <p><label for="birthdate">Születési dátum:</label>
         <input type="date" id="birthdate" name="birthdate" required></p>
         
-        <p><button>Regisztráció</button></p>
+        <p><button type="button" id="register-btn">Regisztráció</button></p>
     </form>
     
     <script>
+      const registerBtn = document.getElementById("register-btn");
       const form = document.querySelector('form');
       const usernameInput = document.getElementById('username');
       const passwordInput = document.getElementById('password');
@@ -32,9 +33,7 @@
       const emailInput = document.getElementById('email');
       const birthdateInput = document.getElementById('birthdate');
       
-      form.addEventListener('submit', event => {
-        event.preventDefault();
-        
+      registerBtn.addEventListener('click', event => {        
         if (usernameInput.value.length < 5 || usernameInput.value.length > 16) {
           alert('A felhasználónévnek 5 és 16 karakter közöttinek kell lennie!');
           return;
