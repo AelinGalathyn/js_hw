@@ -81,17 +81,13 @@ function tippeles() {
         }
 
     }
-    else if (allprobaltbetuk.includes(input)) {
-        alert("Ezt már próbáltad!")
-        document.getElementById("input").value = "";
-    }
     else {
         proba += 1;
         probaltbetuk.push(input);
         allprobaltbetuk.push(input);
         kep();
         document.getElementById("input").value = "";
-        document.getElementById("probaltbetuk").innerHTML = probaltbetuk.join(', ')
+        document.getElementById("probaltbetuk").innerHTML = probaltbetuk.join(', ');
     }
 }
 
@@ -139,12 +135,9 @@ function kep() {
             imagesrc = "akasztofa_forras/forras/akasztofa12.png";
             break;
         case 13:
-            imagesrc = "akasztofa_forras/forras/akasztofa00.png";
             if (confirm("Sajnos ez nem sikerült!\nA helyes válasz " + randomWord + " volt." + "\nSzeretnéd újrakezdeni?")) {
                 setup();
             }
-            break;
-        default:
             break;
     }
     document.getElementById("image").src = imagesrc;
