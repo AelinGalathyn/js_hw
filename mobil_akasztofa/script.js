@@ -1,4 +1,20 @@
-﻿const words = ["almalé", "bab", "csirke", "dinnye", "eper", "fagylalt", "gördeszka", "hajó", "iskola", "jégkorong", "kézilabda", "labda", "madár", "napszemüveg", "olvasás"];
+﻿const words = [
+    'processzor',
+    'alaplap',
+    'memória',
+    'merevlemez',
+    'ssd',
+    'videokártya',
+    'tápegység',
+    'ház',
+    'processzor hűtő',
+    'ventilátor',
+    'optikai meghajtó',
+    'hangkártya',
+    'hálózati kártya',
+    'billentyűzet',
+    'egér'
+];
 let randomIndex;
 let randomWord;
 let underscore;
